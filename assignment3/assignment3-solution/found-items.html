@@ -1,0 +1,22 @@
+<br/><br/><br/>
+
+<table class="table table-hover" ng-if="!list.noListToReturn()">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Short name</th>
+            <th>Description</th>
+            <th>Remove tag</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in list.foundItemsList">
+            <td>{{item.name}}</td>
+            <td>{{item.short_name}}</td>
+            <td>{{item.description}}</td>
+            <td><button class="btn btn-secondary" ng-click="list.onRemove({index: $index})">Don't want this one!</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<div ng-if="list.noListToReturn()">Nothing found</div>
